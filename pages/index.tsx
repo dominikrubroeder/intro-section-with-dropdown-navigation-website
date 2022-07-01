@@ -30,17 +30,17 @@ const Home: NextPage = () => {
         </div>
 
         <div className="sm:flex sm:items-center sm:justify-center sm:w-1/2">
-          <div className="grid gap-8 p-4 sm:max-w-md">
+          <div className="grid gap-8 p-4 sm:max-w-md sm:gap-24">
             <div className="grid gap-4 text-center sm:gap-12 sm:text-left">
-              <h1 className="text-4xl font-bold animate-fadeUp sm:text-7xl">
-                Make remote work
+              <h1 className="text-4xl font-bold animate-fadeUp sm:text-6xl">
+                Make <span className="sm:block">remote work</span>
               </h1>
               <p className="text-app-medium-gray animate-fadeUp">
                 Get your team in sync, no matter your location. Streamline
                 processes, create team rituals, and watch productivity soar.
               </p>
 
-              <button className="text-white rounded-xl font-bold px-6 py-2 bg-app-black m-auto transition-all border border-app-black animate-hidden animate-fadeUp animation-delay-600 hover:bg-transparent hover:text-app-black sm:m-0 sm:w-32 sm:px-0">
+              <button className="text-white rounded-xl px-6 py-2 pt-3 bg-app-black m-auto transition-all border border-app-black animate-hidden animate-fadeUp animation-delay-600 hover:bg-transparent hover:text-app-black sm:m-0 sm:w-32 sm:px-0">
                 Learn more
               </button>
             </div>

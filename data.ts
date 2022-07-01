@@ -1,3 +1,8 @@
+export interface INavigationItem {
+  title: string;
+  subCategories: { title: string; icon: string }[];
+}
+
 export const navigationData = [
   {
     title: 'Features',

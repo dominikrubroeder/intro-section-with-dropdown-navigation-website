@@ -1,8 +1,10 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import IconArrowDown from '../components/IconArrowDown';
-import { navigationData, clientData } from '../data';
+import ClientList from '../components/ClientList';
+import PageHeader from '../components/layout/PageHeader';
+import NavigationList from '../components/navigation/NavigationList';
+import { clientData } from '../data';
 
 const Home: NextPage = () => {
   return (
@@ -16,42 +18,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/images/favicon-32x32.png" />
       </Head>
 
-      <header className="fixed top-0 left-0 w-full bg-white p-6 flex items-center justify-between">
-        <div className="flex items-center sm:gap-8">
-          <Image
-            src="/images/logo.svg"
-            className="object-contain"
-            alt="Logo"
-            width={84}
-            height={27}
-          />
-
-          <nav className="hidden sm:inline-block">
-            <ul className="flex items-center gap-4 text-sm md:gap-8">
-              {navigationData.map((navigationItem, index) => (
-                <li key={index} className="flex items-center gap-1">
-                  {navigationItem.title}
-                  {navigationItem.subCategories.length > 0 && <IconArrowDown />}
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-
-        <div className="hidden text-sm sm:flex sm:items-center md:gap-2 ">
-          <button className="py-2 px-6">Login</button>
-          <button className="py-2 px-6 border rounded-xl">Register</button>
-        </div>
-
-        <div className="sm:hidden">
-          <Image
-            src="/images/icon-menu.svg"
-            alt="Menu icon"
-            width={32}
-            height={18}
-          />
-        </div>
-      </header>
+      <PageHeader />
 
       <main className="flex flex-col gap-8 sm:flex-row-reverse sm:min-h-screen sm:items-center sm:justify-center">
         <div className="relative w-full h-[45vh] sm:h-[70vh] sm:w-1/2">
@@ -60,6 +27,7 @@ const Home: NextPage = () => {
             alt="Hero"
             className="object-contain"
             layout="fill"
+            priority
           />
         </div>
 
@@ -74,22 +42,12 @@ const Home: NextPage = () => {
                 processes, create team rituals, and watch productivity soar.
               </p>
 
-              <button className="text-white rounded-xl font-bold px-6 py-3 bg-black m-auto sm:m-0 sm:w-32 sm:px-0">
+              <button className="text-white rounded-xl font-bold px-6 py-2 bg-black m-auto transition-all border border-black hover:bg-transparent hover:text-black sm:m-0 sm:w-32 sm:px-0">
                 Learn more
               </button>
             </div>
 
-            <div className="flex items-center justify-between gap-4">
-              {clientData.map((client, index) => (
-                <Image
-                  key={index}
-                  src={client.src}
-                  alt={`Client ${client.name}`}
-                  width={client.width}
-                  height={client.height}
-                />
-              ))}
-            </div>
+            <ClientList />
           </div>
         </div>
       </main>

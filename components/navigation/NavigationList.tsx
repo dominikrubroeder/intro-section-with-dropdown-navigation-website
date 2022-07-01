@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { navigationData } from '../../data';
 import NavigationDropdown from './NavigationDropdown';
@@ -9,17 +10,19 @@ const NavigationList: React.FC = () => {
         {navigationData.map((navigationItem, index) => {
           if (navigationItem.subCategories.length > 0) {
             return (
-              <li key={index} className="flex items-center gap-1">
-                {navigationItem.title}
-              </li>
-            );
-          } else {
-            return (
-              <li key={index}>
+              <li key={index} className="cursor-pointer">
                 <NavigationDropdown
                   title={navigationItem.title}
                   subCategories={navigationItem.subCategories}
                 />
+              </li>
+            );
+          } else {
+            return (
+              <li key={index} className="cursor-pointer">
+                <Link href={`/${navigationItem.title.toLowerCase()}`}>
+                  {navigationItem.title}
+                </Link>
               </li>
             );
           }

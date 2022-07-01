@@ -10,7 +10,10 @@ const NavigationList: React.FC = () => {
         {navigationData.map((navigationItem, index) => {
           if (navigationItem.subCategories.length > 0) {
             return (
-              <li key={index} className="cursor-pointer">
+              <li
+                key={index}
+                className="cursor-pointer text-app-medium-gray hover:text-app-black"
+              >
                 <NavigationDropdown
                   title={navigationItem.title}
                   subCategories={navigationItem.subCategories}
@@ -19,7 +22,10 @@ const NavigationList: React.FC = () => {
             );
           } else {
             return (
-              <li key={index} className="cursor-pointer">
+              <li
+                key={index}
+                className="cursor-pointer text-app-medium-gray hover:text-app-black"
+              >
                 <Link href={`/${navigationItem.title.toLowerCase()}`}>
                   {navigationItem.title}
                 </Link>

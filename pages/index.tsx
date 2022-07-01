@@ -18,12 +18,12 @@ const Home: NextPage = () => {
 
       <PageHeader />
 
-      <main className="flex flex-col gap-8 sm:flex-row-reverse sm:min-h-screen sm:items-center sm:justify-center">
-        <div className="relative w-full h-[45vh] sm:h-[70vh] sm:w-1/2">
+      <main className="flex flex-col gap-8 sm:flex-row-reverse sm:min-h-screen sm:items-center sm:justify-center md:justify-start md:max-w-screen-2xl md:m-auto">
+        <div className="relative h-[45vh] sm:h-[70vh] sm:w-1/2">
           <Image
             src="/images/image-hero-desktop.png"
             alt="Hero"
-            className="object-contain"
+            className="object-contain animate-fadeToLeft"
             layout="fill"
             priority
           />
@@ -32,15 +32,15 @@ const Home: NextPage = () => {
         <div className="sm:flex sm:items-center sm:justify-center sm:w-1/2">
           <div className="grid gap-8 p-4 sm:max-w-md">
             <div className="grid gap-4 text-center sm:gap-12 sm:text-left">
-              <h1 className="text-4xl font-bold sm:text-7xl">
+              <h1 className="text-4xl font-bold animate-fadeUp sm:text-7xl">
                 Make remote work
               </h1>
-              <p>
+              <p className="text-app-medium-gray animate-fadeUp">
                 Get your team in sync, no matter your location. Streamline
                 processes, create team rituals, and watch productivity soar.
               </p>
 
-              <button className="text-white rounded-xl font-bold px-6 py-2 bg-black m-auto transition-all border border-black hover:bg-transparent hover:text-black sm:m-0 sm:w-32 sm:px-0">
+              <button className="text-white rounded-xl font-bold px-6 py-2 bg-app-black m-auto transition-all border border-app-black animate-hidden animate-fadeUp animation-delay-600 hover:bg-transparent hover:text-app-black sm:m-0 sm:w-32 sm:px-0">
                 Learn more
               </button>
             </div>

@@ -12,6 +12,7 @@ const ClientList: React.FC = () => {
             alt={`Client ${client.name}`}
             width={client.width}
             height={client.height}
+            className="animate-fadeDown"
           />
         </li>
       ))}

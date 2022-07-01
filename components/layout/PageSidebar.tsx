@@ -32,7 +32,7 @@ const PageSidebar: React.FC<PageSidebarProps> = (props) => {
       )}
       {props.isOpen && (
         <div
-          className="fixed inset-0 bg-black/70 z-40"
+          className="fixed inset-0 bg-app-black/70 z-40"
           onClick={props.closeSidebar}
         ></div>
       )}

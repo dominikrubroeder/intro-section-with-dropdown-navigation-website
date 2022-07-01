@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +14,94 @@ const Home: NextPage = () => {
         <link rel="icon" href="/images/favicon-32x32.png" />
       </Head>
 
-      <main>Hello, world!</main>
+      <header className="fixed top-0 left-0 w-full bg-white p-4 flex items-center justify-between">
+        <div className="flex items-center gap-12">
+          <div className="relative w-20 h-20">
+            <Image
+              src="/images/logo.svg"
+              className="object-contain"
+              alt="Logo"
+              layout="fill"
+            />
+          </div>
+          <nav>
+            <ul className="flex items-center gap-8">
+              <li>Features</li>
+              <li>Company</li>
+              <li>Careers</li>
+              <li>About</li>
+            </ul>
+          </nav>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <button className="py-2 px-6">Login</button>
+          <button className="py-2 px-6 border rounded-xl">Register</button>
+        </div>
+      </header>
+
+      <main className="flex flex-col gap-8 sm:flex-row-reverse sm:min-h-screen sm:items-center sm:justify-center">
+        <div className="relative w-full h-[45vh] sm:h-[60vh] sm:flex-1">
+          <Image
+            src="/images/image-hero-desktop.png"
+            alt="Hero"
+            className="object-contain"
+            layout="fill"
+          />
+        </div>
+
+        <div className="grid gap-8 p-4 sm:flex-1">
+          <div className="grid gap-4 text-center sm:gap-12 sm:text-left">
+            <h1 className="text-4xl font-bold sm:text-7xl">Make remote work</h1>
+            <p>
+              Get your team in sync, no matter your location. Streamline
+              processes, create team rituals, and watch productivity soar.
+            </p>
+
+            <button className="text-white rounded-xl font-bold px-6 py-3 bg-black m-auto">
+              Learn more
+            </button>
+          </div>
+
+          <div className="flex items-center justify-center gap-4">
+            <div className="relative w-20 h-20">
+              <Image
+                src="/images/client-audiophile.svg"
+                alt="Client audiophile"
+                layout="fill"
+                className="object-contain"
+              />
+            </div>
+
+            <div className="relative w-20 h-20">
+              <Image
+                src="/images/client-databiz.svg"
+                alt="Client databiz"
+                layout="fill"
+                className="object-contain"
+              />
+            </div>
+
+            <div className="relative w-20 h-20">
+              <Image
+                src="/images/client-maker.svg"
+                alt="Client databiz"
+                layout="fill"
+                className="object-contain"
+              />
+            </div>
+
+            <div className="relative w-20 h-20">
+              <Image
+                src="/images/client-meet.svg"
+                alt="Client databiz"
+                layout="fill"
+                className="object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
   );
 };

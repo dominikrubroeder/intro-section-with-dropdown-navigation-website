@@ -8,7 +8,7 @@ const PageHeader: React.FC = () => {
   const [showSidebar, setShowSidebar] = useState(false);
 
   return (
-    <header className="w-full bg-white p-6 flex items-center justify-between z-40 animate-fadeDown sm:fixed sm:top-0 sm:left-0 sm:right-0 md:max-w-screen-2xl md:m-auto">
+    <header className="relative w-full bg-white p-6 flex items-center justify-between z-40 animate-fadeDown sm:fixed sm:top-0 sm:left-0 sm:right-0 md:max-w-screen-2xl md:m-auto">
       <div className="flex items-center sm:gap-8">
         <Image
           src="/images/logo.svg"

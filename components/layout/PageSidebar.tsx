@@ -12,7 +12,7 @@ const PageSidebar: React.FC<PageSidebarProps> = (props) => {
   return (
     <>
       {props.isOpen && (
-        <div className="fixed top-0 right-0 max-w-xs w-full h-full bg-white z-50 animate-fadeToLeft">
+        <div className="fixed top-0 right-0 max-w-xs w-full h-screen bg-white z-50 animate-fadeToLeft">
           <header className="flex items-center justify-end p-4">
             <Image
               src="/images/icon-close-menu.svg"
@@ -32,7 +32,7 @@ const PageSidebar: React.FC<PageSidebarProps> = (props) => {
       )}
       {props.isOpen && (
         <div
-          className="fixed inset-0 bg-app-black/70 z-40"
+          className="fixed inset-0 bg-app-black/70 h-screen z-40"
           onClick={props.closeSidebar}
         ></div>
       )}

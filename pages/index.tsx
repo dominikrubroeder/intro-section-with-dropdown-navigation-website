@@ -1,6 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import IconArrowDown from '../components/IconArrowDown';
+import { navigationData, clientData } from '../data';
 
 const Home: NextPage = () => {
   return (
@@ -26,10 +28,12 @@ const Home: NextPage = () => {
 
           <nav className="hidden sm:inline-block">
             <ul className="flex items-center gap-4 text-sm md:gap-8">
-              <li>Features</li>
-              <li>Company</li>
-              <li>Careers</li>
-              <li>About</li>
+              {navigationData.map((navigationItem, index) => (
+                <li key={index} className="flex items-center gap-1">
+                  {navigationItem.title}
+                  {navigationItem.subCategories.length > 0 && <IconArrowDown />}
+                </li>
+              ))}
             </ul>
           </nav>
         </div>
@@ -76,33 +80,15 @@ const Home: NextPage = () => {
             </div>
 
             <div className="flex items-center justify-between gap-4">
-              <Image
-                src="/images/client-databiz.svg"
-                alt="Client databiz"
-                width={114}
-                height={20}
-              />
-
-              <Image
-                src="/images/client-audiophile.svg"
-                alt="Client audiophile"
-                width={73}
-                height={36}
-              />
-
-              <Image
-                src="/images/client-meet.svg"
-                alt="Client meet"
-                width={90}
-                height={20}
-              />
-
-              <Image
-                src="/images/client-maker.svg"
-                alt="Client maker"
-                width={83}
-                height={24}
-              />
+              {clientData.map((client, index) => (
+                <Image
+                  key={index}
+                  src={client.src}
+                  alt={`Client ${client.name}`}
+                  width={client.width}
+                  height={client.height}
+                />
+              ))}
             </div>
           </div>
         </div>

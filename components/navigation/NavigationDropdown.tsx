@@ -22,8 +22,8 @@ const NavigationDropdown: React.FC<INavigationItem> = (props) => {
 
       {isOpen && (
         <ul
-          className={`absolute top-8 grid bg-white py-4 px-6 shadow-xl rounded-xl border border-gray-100 animate-fadeDown ${
-            props.subCategories[0].icon !== '' ? 'right-0' : 'left-0'
+          className={`grid gap-1 bg-white pl-4 pt-4 animate-fadeDown sm:absolute sm:top-8 sm:shadow-xl sm:rounded-xl sm:py-4 sm:px-6 sm:border sm:border-gray-100 sm:gap-0 ${
+            props.subCategories[0].icon !== '' ? 'sm:right-0' : 'sm:left-0'
           }`}
         >
           {props.subCategories.map((category, index) => (

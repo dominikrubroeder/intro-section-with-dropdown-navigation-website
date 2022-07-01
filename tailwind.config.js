@@ -11,9 +11,14 @@ module.exports = {
           '0%': { transform: 'translateY(16%)', opacity: 0 },
           '100%': { transform: 'translateY(0%)', opacity: 1 },
         },
+        fadeToLeft: {
+          '0%': { transform: 'translateX(16%)', opacity: 0 },
+          '100%': { transform: 'translateX(0%)', opacity: 1 },
+        },
       },
       animation: {
         fadeDown: 'fadeDown .4s ease-out forwards',
+        fadeToLeft: 'fadeToLeft .4s ease-out forwards',
       },
     },
   },

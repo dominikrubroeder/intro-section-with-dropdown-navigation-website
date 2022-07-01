@@ -1,10 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import ClientList from '../components/ClientList';
 import PageHeader from '../components/layout/PageHeader';
-import NavigationList from '../components/navigation/NavigationList';
-import { clientData } from '../data';
+import ClientList from '../components/ClientList';
 
 const Home: NextPage = () => {
   return (

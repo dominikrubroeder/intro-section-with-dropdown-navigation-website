@@ -1,10 +1,14 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
+import AuthenticationActions from '../AuthenticationActions';
 import NavigationList from '../navigation/NavigationList';
+import PageSidebar from './PageSidebar';
 
 const PageHeader: React.FC = () => {
+  const [showSidebar, setShowSidebar] = useState(false);
+
   return (
-    <header className="fixed top-0 left-0 w-full bg-white p-6 flex items-center justify-between">
+    <header className="fixed top-0 left-0 w-full bg-white p-6 flex items-center justify-between z-40">
       <div className="flex items-center sm:gap-8">
         <Image
           src="/images/logo.svg"
@@ -14,15 +18,19 @@ const PageHeader: React.FC = () => {
           height={27}
         />
 
-        <NavigationList />
+        <div className="hidden sm:inline-block">
+          <NavigationList />
+        </div>
       </div>
 
-      <div className="hidden text-sm sm:flex sm:items-center md:gap-2 ">
-        <button className="py-2 px-6">Login</button>
-        <button className="py-2 px-6 border rounded-xl">Register</button>
+      <div className="hidden sm:inline-block">
+        <AuthenticationActions />
       </div>
 
-      <div className="sm:hidden">
+      <div
+        className="cursor-pointer sm:hidden"
+        onClick={() => setShowSidebar((previousState) => !previousState)}
+      >
         <Image
           src="/images/icon-menu.svg"
           alt="Menu icon"
@@ -30,6 +38,11 @@ const PageHeader: React.FC = () => {
           height={18}
         />
       </div>
+
+      <PageSidebar
+        isOpen={showSidebar}
+        closeSidebar={() => setShowSidebar(false)}
+      />
     </header>
   );
 };

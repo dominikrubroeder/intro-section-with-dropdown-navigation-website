@@ -5,8 +5,8 @@ import NavigationDropdown from './NavigationDropdown';
 
 const NavigationList: React.FC = () => {
   return (
-    <nav className="hidden sm:inline-block">
-      <ul className="flex items-center gap-4 text-sm md:gap-8">
+    <nav>
+      <ul className="grid gap-4 text-sm sm:flex sm:items-center md:gap-8">
         {navigationData.map((navigationItem, index) => {
           if (navigationItem.subCategories.length > 0) {
             return (
